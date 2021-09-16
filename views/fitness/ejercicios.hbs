@@ -1,0 +1,14 @@
+<br><br><br>
+{{#each exercise}}
+
+  <h4>Nombre del ejercicio:  </h4><p>{{name}}</p>
+  <h4>Descripción: </h4><p>{{description}}</p>
+ <h4>Categoria: </h4><p>{{category}}</p>
+  <h4>Material:</h4><p>{{equipment}}</p>
+
+  {{/each}}
+
+<h4>Imagen</h4>
+   {{#each exerciseImage}}
+  <img class="curl" src={{image}}>
+  {{/each}}

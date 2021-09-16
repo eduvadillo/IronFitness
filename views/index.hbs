@@ -1,0 +1,45 @@
+<br>
+<h1> {{username}} Bienvenido a la mejor web para planificar tu entreno </h1>
+<br>
+<br>
+<br>
+<h2>Cual es tu nivel</h2>
+<br>
+
+<form action="/rutina" method="post" class="boxForm">
+<div class="radio">
+  <input class="radio__input" type="radio" value="Principiante" name ="myRadio" id="myRadio1">
+  <label class="radio__label" for="myRadio1"> Principiante</label>
+   <input class="radio__input" type="radio" value="Medio" name ="myRadio" id="myRadio2">
+  <label class="radio__label" for="myRadio2">Medio</label>
+   <input class="radio__input" type="radio" value="Avanzado" name ="myRadio" id="myRadio3">
+  <label class="radio__label" for="myRadio3"> Avanzado</label>
+</div>
+<br>
+<h2>Cuantos dias a la semana quieres entrenar</h2>
+<br>
+<div class="radio">
+  <input class="radio__input" type="radio" value="1" name ="myRadio3" id="myRadio4">
+  <label class="radio__label" for="myRadio4"> 1</label>
+   <input class="radio__input" type="radio" value="3" name ="myRadio3" id="myRadio5">
+  <label class="radio__label" for="myRadio5">3</label>
+   <input class="radio__input" type="radio" value="5" name ="myRadio3" id="myRadio6">
+  <label class="radio__label" for="myRadio6"> 5</label>
+</div>
+<br>
+<button type="submit" class="radio">Ver Ejercicios</button>
+</form>
+
+<br>
+<br>
+<h1>Elige ejercicios según el musculo que desees entrenar</h1>
+<form action="/muscles" method="get" class="boxForm">
+<button type="submit" class="radio">Ver musculos</button>
+</form>
+
+<br>
+<br>
+<h1>Elige ejercicios según el equipamiento que desees usar</h1>
+<form action="/equip" method="get" class="boxForm">
+<button type="submit" class="radio">Ver equipamiento</button>
+</form>

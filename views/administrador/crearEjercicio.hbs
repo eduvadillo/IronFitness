@@ -1,0 +1,84 @@
+<form action="/crear-ejercicio" method="POST">
+<div class="general">
+
+<div class="textCreate">
+<div class="allSelects">
+        <h3>Excercise name</h3>
+        <textarea rows="3" cols="30" name="name" value="name"></textarea>
+</div>
+
+<div class="allSelects">
+        <h3> Excercise description</h3>
+        <textarea rows="3" cols="30" name="description" value="description"></textarea>
+</div>
+
+<div class="allSelects">
+        <h3> Excercise comment</h3>
+        <textarea rows="3" cols="30" name="comments" value=" comments"></textarea>
+</div>
+</div>
+
+
+<div class="allSelects">
+<h3>Category</h3>
+<div class="select">
+   <select name="category" id="format">
+      <option selected disabled>Choose exercise category</option>
+      <option value="Abs">Abs</option>
+      <option value="Arms">Arms</option>
+      <option value="Back">Back</option>
+      <option value="Calves">Calves</option>
+      <option value="Chest">Chest</option>
+      <option value="Legs">Legs</option>
+      <option value="Shoulders">Shoulders</option>
+   </select>
+</div>
+</div>
+
+<div class="allSelects">
+<h3>Muscle</h3>
+<div class="select">
+   <select name="muscles" id="format2">
+      <option selected disabled>Choose a muscle to train</option>
+      <option value="Anterior deltoid">Anterior deltoid</option>
+      <option value="Biceps brachii">Biceps brachii</option>
+      <option value="Biceps femoris">Biceps femoris</option>
+      <option value="Brachialis"> Brachialis</option>
+      <option value="Gastrocnemius">Gastrocnemius</option>
+      <option value="Gluteus maximus">Gluteus maximus</option>
+      <option value="Latissimus dorsi">Latissimus dorsi </option>
+      <option value="Obliquus externus abdominis">Obliquus externus abdominisl</option>
+      <option value="Pectoralis major">Pectoralis major</option>
+      <option value=" Quadriceps femoris">Quadriceps femoris</option>
+      <option value="Rectus abdominis ">Rectus abdominis</option>
+      <option value="Serratus anterior">Serratus anterior</option>
+       <option value="Soleus"> Soleus</option>
+      <option value="Trapezius"> Trapezius</option>
+      <option value="Triceps brachii">Triceps brachii</option>
+   </select>
+</div>
+</div>
+
+<div class="allSelects">
+<h3>Equipment</h3>
+<div class="select">
+   <select name="equipment" id="format2">
+      <option selected disabled>Choose a necessary equipment</option>
+      <option value="Barbell">Barbell</option>
+      <option value="Bench">Bench</option>
+      <option value="GymMat">Gym mat</option>
+      <option value="Incline bench">Incline bench</option>
+      <option value="Kettlebell">Kettlebell</option>
+      <option value="bodyweight exercise">bodyweight exercise</option>
+      <option value="PullUpBar">Pull-up bar</option>
+      <option value="SwissBall">Swiss Ball</option>
+      <option value="SZBar">SZ-Bar</option>
+   </select>
+</div>
+</div>
+
+
+
+</div>
+<button class="btn btn-primary botonCrear" type="submit"> Create Exercise</button>
+</form>

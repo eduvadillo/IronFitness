@@ -1,0 +1,9 @@
+<h1>bienvenido {{user.username}}</h1>
+{{#each user.favorites}}
+
+  <p>Este es el id {{_id}}</p>
+  <p>Num base: {{exercise_base}}</p>
+  <p> Nombre: {{name}}</p>
+  <p style=" white-space: pre-wrap"> Descripción: {{{description}}}</p>
+
+{{/each}}

@@ -1,0 +1,22 @@
+<br /><br /><br />
+
+<div class="general">
+  {{#each draw}}
+
+    <div class="muscleCard">
+           <a href="/ejercicios/{{id}}" class="btn btn-primary centrarBoton">{{name}}</a>
+      <div class="card" style="width: 18rem;">
+        {{#if is_front}}
+          <img  class="card-img-top cuerpo" src="https://wger.de/static/images/muscles/muscular_system_front.svg" />
+        {{else}}
+          <img class="card-img-top cuerpo" src="https://wger.de/static/images/muscles/muscular_system_back.svg"   />
+        {{/if}}
+        <img class="card-img-top muscle" src="https://wger.de{{image_url_main}}"  />
+        <div class="card-body">
+          <a href="/ejercicios/{{id}}" class="btn btn-primary centrarBoton">Ver ejercicios</a>
+        </div>
+      </div>
+    </div>
+
+  {{/each}}
+</div>

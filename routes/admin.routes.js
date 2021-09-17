@@ -17,7 +17,7 @@ router.get("/crear-ejercicio", (req, res) => {
     // If the user is found, send the message username is taken
     if (found) {
         console.log(`*******************`, found)
-        res.render("administrador/crearEjercicio")
+        res.render("administrador/crearEjercicio", {isLoggedIn: req.session.user})
  }
  else {res.render("/")}
    

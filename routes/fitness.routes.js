@@ -10,17 +10,9 @@ const FitnessAPI = new Api();
 
 router.get("/elegir-categoria", (req, res) => {
 
-        res.render(`fitness/indexEjercicios`)
+        res.render(`fitness/indexEjercicios`,  { isLoggedIn: req.session.user })
 })
 
-router.get("/muscles", (req, res) => {
-  FitnessAPI.getAllMuscles().then((allMuscles) => {
-    res.render(`fitness/dr`, {
-      muscles: allMuscles.data.results,
-      isLoggedIn: req.user,
-    });
-  });
-});
 
 router.get("/exercise", (req, res) => {
   FitnessAPI.getAllExercise().then((allExercise) => {
@@ -32,47 +24,27 @@ router.get("/exercise", (req, res) => {
   });
 });
 
-router.get("/musclesexc", (req, res) => {
-  FitnessAPI.getCompleteExercise().then((exerciseComplete) => {
-    res.render(`fitness/exerciseCom`, {
-      completeExercise: exerciseComplete.data.results,
-      isLoggedIn: req.user,
-    });
-  });
-});
 
-router.get("/ejercicios", isLoggedIn, (req, res) => {
-  FitnessAPI.getOneExercise().then((oneExercise) => {
-    //res.send(oneExercise.data.results);
-    FitnessAPI.getOneExerciseImage().then((image) => {
-      res.render(`fitness/ejercicios`, {
-        exercise: oneExercise.data.results,
-        exerciseImage: image.data.results,
-        isLoggedIn: req.user,
-      });
-    });
-  });
-});
 
 router.get("/draw", (req, res) => {
   FitnessAPI.getDrawExercise().then((drawMuscles) => {
     res.render(`fitness/drawExer`, {
       draw: drawMuscles.data.results,
-      isLoggedIn: req.user,
+        isLoggedIn: req.session.user 
     });
   });
 });
 
 // CREAR Y COMPROBAR FAVORITO
 
-router.get("/ejercicios/:id", (req, res) => {
+router.get("/ejercicios/:id", isLoggedIn, (req, res) => {
   let id = req.params.id;
   FitnessAPI.getMuscleExercise(id)
     .then((ejerciciosMuscle) => {
       // res.send(ejerciciosMuscle.data)
       res.render(`fitness/ejerciciosMusculo`, {
         exercise: ejerciciosMuscle.data.results,
-        isLoggedIn: req.user,
+         isLoggedIn: req.session.user
       });
     })
     .catch((error) => console.log(error));
@@ -84,66 +56,75 @@ Exercise.find()
   FitnessAPI.getEquipment().then((allEquip) => {
     res.render(`fitness/equipment`, {
       equip: allEquip.data.results,
-      isLoggedIn: req.user,
+      isLoggedIn: req.session.user
     });
   });
 });
 
-router.post("/equipment", (req, res) => {
+router.post("/equipment", isLoggedIn, (req, res) => {
     const  {Barbell, Bench, id3, id4, id9, Kettlebell, id7, id6, id5, id2 } = req.body
-    console.log(Barbell, Bench)
+
+    const cleanString = (text) => {const regex = /(<([^>]+)>)/ig
+  return text.replace(regex, "")
+    }
+
     if (Barbell) {
   Exercise.find({ $and:[{ "equipment.name" : "Barbell"}, {"language.id" : 2 }]})
   .then((exercise) => { 
-   res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          console.log(exercise)
+          exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
+         
+   res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user}  )
   })
 }     else if (Bench) {
   Exercise.find({ $and:[{ "equipment.name" : "Bench"}, {"language.id" : 2 }]})
   .then((exercise) => { 
-          res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }    else if (id3) {
   Exercise.find({ $and:[{ "equipment.id" : 3}, {"language.id" : 2 }]})
   .then((exercise) => { 
-          res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }
  else if (id4) {
   Exercise.find({ $and:[{ "equipment.id" : 4}, {"language.id" : 2 }]})
   .then((exercise) => { 
-          res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }
  else if (id9) {
   Exercise.find({ $and:[{ "equipment.id" : 9}, {"language.id" : 2 }]})
   .then((exercise) => { 
-          res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }
  else if (Kettlebell) {
   Exercise.find({ $and:[{ "equipment.name" : "Kettlebell"}, {"language.id" : 2 }]})
   .then((exercise) => { 
-          res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }  else if (id7) {
   Exercise.find({ $and:[{ "equipment.id" : 7}, {"language.id" : 2 }]})
   .then((exercise) => { 
-          res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }  else if (id6) {
   Exercise.find({ $and:[{ "equipment.id" : 6}, {"language.id" : 2 }]})
   .then((exercise) => { 
-          res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }  else if (id5) {
   Exercise.find({ $and:[{ "equipment.id" : 5}, {"language.id" : 2 }]})
   .then((exercise) => { 
-          res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }   else if (id2) {
   Exercise.find({ $and:[{ "equipment.id" : 2}, {"language.id" : 2 }]})
   .then((exercise) => { 
-          res.render(`fitness/equipExercise/gymMat`, {exercise} )
+          res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }
 })
@@ -151,34 +132,11 @@ router.post("/equipment", (req, res) => {
 
 
 
-router.get("/equip", (req, res) => {
-  FitnessAPI.getEquipment().then((allEquip) => {
-    res.render(`fitness/equip`, {
-      equip: allEquip.data.results,
-      isLoggedIn: req.user,
-    });
-  });
-});
-
-router.get("/equip/:id", (req, res) => {
-  let id = req.params.id;
-  FitnessAPI.getEquipmentExercise(id)
-    .then((ejerciciosEquip) => {
-      // res.send(ejerciciosMuscle.data)
-      res.render(`fitness/equipExer`, {
-        exercise: ejerciciosEquip.data.results,
-        isLoggedIn: req.user,
-      });
-    })
-    .catch((error) => console.log(error));
-});
-
-
-router.get("/allexcercise", (req, res) => {
+router.get("/allexcercise" , isLoggedIn, (req, res) => {
   FitnessAPI.getAllCompleteExercise()
     .then((ejerciciosEquip) => {
-      res.send(ejerciciosEquip.data);
-      //res.render(`fitness/equipExer`,  { exercise: ejerciciosEquip.data.results, isLoggedIn:req.user });
+     // res.send(ejerciciosEquip.data);
+      res.render(`fitness/exercise`,  { exercise: ejerciciosEquip.data.results, isLoggedIn:req.user.session});
     })
     .catch((error) => console.log(error));
 });
@@ -204,7 +162,7 @@ router.post("/add-favorite/:id", isLoggedIn, (req, res) => {
           User.findByIdAndUpdate(req.user._id, {
             $push: { favorites: result._id },
           }).then(() => {
-            res.redirect("/equip");
+            res.redirect("/equipment");
           });
         });
       } else {
@@ -230,14 +188,14 @@ router.post("/add-favorite/:id", isLoggedIn, (req, res) => {
 }); 
 
 
-router.post("/busqueda-avanzada", async (req, res) => {
+router.post("/busqueda-avanzada", isLoggedIn, async (req, res) => {
   const {category, muscles, equipment} = req.body;
   console.log('**************', category, muscles, equipment) 
   
           try {
                 const exercise1 = await Exercise.find({ $and:[{ "category.name" : category }, { "muscles.name" : muscles },  { "equipment.name" : equipment } , {"language.id" : 2 }]}).limit( 2 )
                 if (exercise1) {
-                res.render(`fitness/busquedaAvanzada`, { exercise: exercise1, isLoggedIn: req.user})
+                res.render(`fitness/busquedaAvanzada`, { exercise: exercise1, isLoggedIn:req.user.session})
                
                 }
                 } 

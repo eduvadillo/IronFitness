@@ -4,19 +4,20 @@ const User = require("../models/User.model");
 const Ejercicio = require("../models/Ejercicios.model");
 
 /* GET home page */
-router.get("/", isLoggedIn, (req, res, next) => {
-  User.findById(req.user._id)
-  .then((user) => {
-        res.render("index", { user: user, isLoggedIn: req.user });  
+router.get("/", (req, res, next) => {
+  /*User.findById(req.user._id)
+  .then((user) => { */
+        res.render("index", { isLoggedIn: req.session.user });  
   })
-});
+/* }); */
 
-router.get("/a", isLoggedIn, (req, res, next) => {
+router.get("/profile", isLoggedIn, (req, res, next) => {
   User.findById(req.user._id)
-  .then((user) => {
-        res.render("index2", { user: user, isLoggedIn: req.user });  
+  .then((user) => { 
+          console.log(user)
+        res.render("profile", { user, isLoggedIn: req.session.user });  
   })
-});
+})
 
 //  ejercicios favoritos
 
@@ -24,7 +25,7 @@ router.get("/myfavorites", isLoggedIn, (req, res, next) => {
   User.findById(req.user._id)
   .populate("favorites")
   .then((user) => {
-        res.render("favorites", { user: user });
+        res.render("favorites", { user: user, isLoggedIn: req.session.user });
   // res.send(user)
   });
 });

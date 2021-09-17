@@ -7,7 +7,7 @@
 <p class="nomSubCateg"> {{name}}</p>
     {{/each}}
   {{/if}}
-  <p class="subcategorias">Descripción: </p><br /><p class="nomSubCateg">{{{description}}}</p>
+  <p class="subcategorias">Descripción: </p><br /><p class="nomSubCateg">{{description}}</p>
   {{#if images}}
   <p class="subcategorias">Imágenes: </p>
     {{#each images}}
@@ -46,8 +46,9 @@
         <input type="text" name="equipment" hidden value="{{equipment}}" />
         <input type="text" name="comments" hidden value="{{this.comments}}" />
         <input type="text" name="ejercicioId" hidden value="{{id}}" />
-
-          <button type="submit">Añadir a favoritos</button>
+        <div class="col text-center">
+          <button class="btn btn-danger regular-button btnmargin " type="submit">Añadir a favoritos</button>
+          </div>
         </form>
 </div>
 {{/each}}

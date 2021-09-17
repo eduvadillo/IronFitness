@@ -10,12 +10,12 @@ const FitnessAPI = new Api();
 
 router.get("/elegir-rutina", (req, res) => {
 
-        res.render(`rutinas/indexRutina`)
+        res.render(`rutinas/indexRutina`, {isLoggedIn: req.session.user})
 })
 
 
 
-router.post("/rutina", async (req, res) => {
+router.post("/rutina", isLoggedIn, async (req, res) => {
   const {myRadio, myRadio3} = req.body;
   let aleatorio = Math.floor(Math.random() * 10) + 80;
   console.log('**************', myRadio, myRadio3) 
@@ -24,6 +24,9 @@ router.post("/rutina", async (req, res) => {
         /*  const exercise1 = Exercise.find({ $and:[{ "category.id" : 8 }, {"language.id" : 2 }]}).limit( 4 )
           const exercise2 =  Exercise.find({ $and:[{ "category.id" : 9 }, {"language.id" : 2 }]}).limit( 2 )
         */
+const cleanString = (text) => {const regex = /(<([^>]+)>)/ig
+  return text.replace(regex, "");
+}
 
           try {
                 const exercise1 = await Exercise.find({ $and:[{ "category.id" : 8 }, {"language.id" : 2 }]}).limit( 1 )
@@ -35,13 +38,21 @@ router.post("/rutina", async (req, res) => {
                 const exercise7 =  await Exercise.find({ $and:[{ "category.id" : 14 }, {"language.id" : 2 }]}).limit( 1 )
                 console.log(exercise1)
                 if (exercise1 && exercise2 && exercise3 && exercise4 && exercise5 && exercise6 && exercise7) {
-                res.render(`rutinas/rutinaPrueba`, { exercise: exercise1, exercise2: exercise2,  exercise3: exercise3, exercise4: exercise4, exercise5: exercise5, exercise6: exercise6, exercise7:exercise7, isLoggedIn: req.user})
+                        exercise1[0].description = cleanString(exercise1[0].description)
+                          exercise2[0].description = cleanString(exercise2[0].description)
+                            exercise3[0].description = cleanString(exercise3[0].description)
+                              exercise4[0].description = cleanString(exercise4[0].description)
+                                exercise5[0].description = cleanString(exercise5[0].description)
+                                  exercise6[0].description = cleanString(exercise6[0].description)
+                                    exercise7[0].description = cleanString(exercise7[0].description) 
+                                    console.log(exercise1.description)
+                res.render(`rutinas/rutinaPrueba`, { exercise: exercise1, exercise2: exercise2,  exercise3: exercise3, exercise4: exercise4, exercise5: exercise5, exercise6: exercise6, exercise7:exercise7,  isLoggedIn: req.session.user})
                
                 }
                 } 
                 
         catch (error) { 
-                next(error) 
+                (console.log(error)) 
         }
 
         }      
@@ -65,34 +76,6 @@ router.get("/rutina2", (req, res) => {
    })
 });
 
-/*
-Book.findOne( {book_id} )
-        .then((book) => {
-          if (book) {
-            const layout = req.user ? '/layouts/auth' : '/layouts/noAuth'
-            res.status(202).render(`book-details`, { bookDetails: book , layout: layout});
-          } else {
-            Book.create({book_id,title,authors,pageCount,publishedDate,description,thumbnail,price,buyLink})
-            .then((result) => {
-              const layout = req.user ? '/layouts/auth' : '/layouts/noAuth'
-              res.status(202).render(`book-details`, {bookDetails: result, layout: layout})
-            });
-          }
-        })
-        .catch((err) => {
-          res.status(400).send(err)
-        });
-*/
 
-   /*     
-  FitnessAPI.getCompleteExercise().then((exerciseComplete) => {
-    res.render(`fitness/exerciseCom`, {
-      completeExercise: exerciseComplete.data.results,
-      isLoggedIn: req.user,
-    });
-  });
-});
-
-*/
 
 module.exports = router;

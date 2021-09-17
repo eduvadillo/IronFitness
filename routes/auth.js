@@ -18,6 +18,10 @@ router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
 });
 
+router.get("/acceso-restringido", (req, res) => {
+  res.render("auth/loginNo");
+});
+
 router.post("/signup", isLoggedOut, (req, res) => {
   const { username, password, codeInvitation, email, nivel } = req.body;
 

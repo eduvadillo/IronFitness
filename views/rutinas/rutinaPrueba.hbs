@@ -1,19 +1,340 @@
-<p>Rutinas de prueba</p>
-<br /><br />
+<div class="rutinaAdapta">
+        <h1>La rutina que mejor de adapta a ti es la siguiente:</h1>
+</div>
+
+<div class="rutinaConsejo">
+        <h4>Es importante que trabajes todos los musclos de tu cuerpo, por este motivo va a trabajar un músculo de cada categoría </h4>
+</div>
+
+<div class= "allExerciseRutina">
+        <div class="bodyRutina">
+                <img class="bodyImage" src="https://wger.de/static/images/muscles/muscular_system_front.svg">
+        </div>
+        <div class="bodyRutina">
+<h5 class="categoryRutina">Brazos: </h5>    <a href="#brazos"> {{#each exercise}} {{name}}{{/each}} </a>
+<h5 class="categoryRutina">Hombros: </h5> <a href="#Hombros">{{#each exercise6}} {{name}}{{/each}}</a>
+<h5 class="categoryRutina">Pecho: </h5>       <a href="#Pecho"> {{#each exercise4}} {{name}}{{/each}}</a>
+<h5 class="categoryRutina">Espalda: </h5>     <a href="#Espalda"> {{#each exercise5}} {{name}}{{/each}}</a>
+<h5 class="categoryRutina">Piernas: </h5>      <a href="#Piernas">{{#each exercise2}} {{name}}{{/each}}</a>
+<h5 class="categoryRutina">Pantorrillas: </h5> <a href="#Pantorrillas">{{#each exercise7}} {{name}}{{/each}}</a>
+<h5 class="categoryRutina">Abdominales: </h5>  <a href="#Abdominales">{{#each exercise3}} {{name}}{{/each}}</a>
+</div>
+<div class="bodyRutina">
+  <img  class="bodyImage" src="https://wger.de/static/images/muscles/muscular_system_back.svg">
+ </div>
+</div>
+
+<div class="rutinaConsejo">
+        <h4>Tienes que hacer 3 series de 15 repeticiones sin llegar al fallo muscular descansando 1 minuto entre serie y serie </h4>
+</div>
 
 <div class="general">
-
-{{#with completeExercise}}
-<div class="muscleCard">
-  <div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-    <h5 class="card-title">{{name}}</h5>
-    <p class="card-text">{{description}}</p>
-    <a href="#" class="btn btn-primary">Añadir a favoritos</a>
+<a name="brazos"></a>
+{{#each exercise}}
+<div class="card vistabusqueda" style="width: 93vw;">
+  <h2 class="tituloEjercicio"> {{name}}</h2>
+  {{#if equipment}}
+  <p class="subcategorias">Equipamiento: <br /></p>
+    {{#each equipment}}
+<p class="nomSubCateg"> {{name}}</p>
+    {{/each}}
+  {{/if}}
+  <p class="subcategorias">Descripción: </p><p class="nomSubCateg">{{{description}}}</p>
+  {{#if images}}
+  <p class="subcategorias">Imágenes: </p>
+    {{#each images}}
+<img class="imagenEjercicio" src="{{image}}" />
+    {{/each}}
+  {{/if}}
+    {{#if comments}}
+    <p class="subcategorias">Comentarios para este ejercicio: </p>
+    {{#each comments}}
+  <p class="nomSubCateg">{{comment}}</p>
+    {{/each}}
+  {{/if}}
+  {{#if muscles}}
+  <div class="musculoDiv">
+   <p  class="subcategorias">Músculos:</p>
+    {{#each muscles}}
+    <div class="musculoImgs">
+      <img  class="muscleImg" src="https:wger.de{{image_url_main}}" />
+     {{#if is_front}}
+     <img class="frontImg" src="https://wger.de/static/images/muscles/muscular_system_front.svg">
+     {{else}}
+     <img src="https://wger.de/static/images/muscles/muscular_system_back.svg">
+      </div>
+     {{/if}}
+    {{/each}}
     </div>
-  </div>
+  {{/if}}
+  
 </div>
-{{/with}}
+{{/each}}
+</div>
 
+
+
+<div class="general">
+<a name="Hombros"></a>
+{{#each exercise6}}
+<div class="card vistabusqueda" style="width: 93vw;">
+  <h2 class="tituloEjercicio"> {{name}}</h2>
+  {{#if equipment}}
+  <p class="subcategorias">Equipamiento: <br /></p>
+    {{#each equipment}}
+<p class="nomSubCateg"> {{name}}</p>
+    {{/each}}
+  {{/if}}
+  <p class="subcategorias">Descripción: </p><p class="nomSubCateg">{{{description}}}</p>
+  {{#if images}}
+  <p class="subcategorias">Imágenes: </p>
+    {{#each images}}
+<img class="imagenEjercicio" src="{{image}}" />
+    {{/each}}
+  {{/if}}
+    {{#if comments}}
+    <p class="subcategorias">Comentarios para este ejercicio: </p>
+    {{#each comments}}
+  <p class="nomSubCateg">{{comment}}</p>
+    {{/each}}
+  {{/if}}
+  {{#if muscles}}
+  <div class="musculoDiv">
+   <p  class="subcategorias">Músculos:</p>
+    {{#each muscles}}
+    <div class="musculoImgs">
+      <img  class="muscleImg" src="https:wger.de{{image_url_main}}" />
+     {{#if is_front}}
+     <img class="frontImg" src="https://wger.de/static/images/muscles/muscular_system_front.svg">
+     {{else}}
+     <img src="https://wger.de/static/images/muscles/muscular_system_back.svg">
+      </div>
+     {{/if}}
+    {{/each}}
+    </div>
+  {{/if}}
+  
 </div>
+{{/each}}
+</div>
+
+<div class="general">
+<a name="Pecho"></a>
+{{#each exercise4}}
+<div class="card vistabusqueda" style="width: 93vw;">
+  <h2 class="tituloEjercicio"> {{name}}</h2>
+  {{#if equipment}}
+  <p class="subcategorias">Equipamiento: <br /></p>
+    {{#each equipment}}
+<p class="nomSubCateg"> {{name}}</p>
+    {{/each}}
+  {{/if}}
+  <p class="subcategorias">Descripción: </p><p class="nomSubCateg">{{{description}}}</p>
+  {{#if images}}
+  <p class="subcategorias">Imágenes: </p>
+    {{#each images}}
+<img class="imagenEjercicio" src="{{image}}" />
+    {{/each}}
+  {{/if}}
+    {{#if comments}}
+    <p class="subcategorias">Comentarios para este ejercicio: </p>
+    {{#each comments}}
+  <p class="nomSubCateg">{{comment}}</p>
+    {{/each}}
+  {{/if}}
+  {{#if muscles}}
+  <div class="musculoDiv">
+   <p  class="subcategorias">Músculos:</p>
+    {{#each muscles}}
+    <div class="musculoImgs">
+      <img  class="muscleImg" src="https:wger.de{{image_url_main}}" />
+     {{#if is_front}}
+     <img class="frontImg" src="https://wger.de/static/images/muscles/muscular_system_front.svg">
+     {{else}}
+     <img src="https://wger.de/static/images/muscles/muscular_system_back.svg">
+      </div>
+     {{/if}}
+    {{/each}}
+    </div>
+  {{/if}}
+  
+</div>
+{{/each}}
+</div>
+
+<div class="general">
+<a name="Espalda"></a>
+{{#each exercise5}}
+<div class="card vistabusqueda" style="width: 93vw;">
+  <h2 class="tituloEjercicio"> {{name}}</h2>
+  {{#if equipment}}
+  <p class="subcategorias">Equipamiento: <br /></p>
+    {{#each equipment}}
+<p class="nomSubCateg"> {{name}}</p>
+    {{/each}}
+  {{/if}}
+  <p class="subcategorias">Descripción: </p><p class="nomSubCateg">{{{description}}}</p>
+  {{#if images}}
+  <p class="subcategorias">Imágenes: </p>
+    {{#each images}}
+<img class="imagenEjercicio" src="{{image}}" />
+    {{/each}}
+  {{/if}}
+    {{#if comments}}
+    <p class="subcategorias">Comentarios para este ejercicio: </p>
+    {{#each comments}}
+  <p class="nomSubCateg">{{comment}}</p>
+    {{/each}}
+  {{/if}}
+  {{#if muscles}}
+  <div class="musculoDiv">
+   <p  class="subcategorias">Músculos:</p>
+    {{#each muscles}}
+    <div class="musculoImgs">
+      <img  class="muscleImg" src="https:wger.de{{image_url_main}}" />
+     {{#if is_front}}
+     <img class="frontImg" src="https://wger.de/static/images/muscles/muscular_system_front.svg">
+     {{else}}
+     <img src="https://wger.de/static/images/muscles/muscular_system_back.svg">
+      </div>
+     {{/if}}
+    {{/each}}
+    </div>
+  {{/if}}
+  
+</div>
+{{/each}}
+</div>
+
+<div class="general">
+<a name="Piernas"></a>
+{{#each exercise2}}
+<div class="card vistabusqueda" style="width: 93vw;">
+  <h2 class="tituloEjercicio"> {{name}}</h2>
+  {{#if equipment}}
+  <p class="subcategorias">Equipamiento: <br /></p>
+    {{#each equipment}}
+<p class="nomSubCateg"> {{name}}</p>
+    {{/each}}
+  {{/if}}
+  <p class="subcategorias">Descripción: </p><p class="nomSubCateg">{{{description}}}</p>
+  {{#if images}}
+  <p class="subcategorias">Imágenes: </p>
+    {{#each images}}
+<img class="imagenEjercicio" src="{{image}}" />
+    {{/each}}
+  {{/if}}
+    {{#if comments}}
+    <p class="subcategorias">Comentarios para este ejercicio: </p>
+    {{#each comments}}
+  <p class="nomSubCateg">{{comment}}</p>
+    {{/each}}
+  {{/if}}
+  {{#if muscles}}
+  <div class="musculoDiv">
+   <p  class="subcategorias">Músculos:</p>
+    {{#each muscles}}
+    <div class="musculoImgs">
+      <img  class="muscleImg" src="https:wger.de{{image_url_main}}" />
+     {{#if is_front}}
+     <img class="frontImg" src="https://wger.de/static/images/muscles/muscular_system_front.svg">
+     {{else}}
+     <img src="https://wger.de/static/images/muscles/muscular_system_back.svg">
+      </div>
+     {{/if}}
+    {{/each}}
+    </div>
+  {{/if}}
+  
+</div>
+{{/each}}
+</div>
+
+<div class="general">
+<a name="Pantorrillas"></a>
+{{#each exercise7}}
+<div class="card vistabusqueda" style="width: 93vw;">
+  <h2 class="tituloEjercicio"> {{name}}</h2>
+  {{#if equipment}}
+  <p class="subcategorias">Equipamiento: <br /></p>
+    {{#each equipment}}
+<p class="nomSubCateg"> {{name}}</p>
+    {{/each}}
+  {{/if}}
+  <p class="subcategorias">Descripción: </p><p class="nomSubCateg">{{{description}}}</p>
+  {{#if images}}
+  <p class="subcategorias">Imágenes: </p>
+    {{#each images}}
+<img class="imagenEjercicio" src="{{image}}" />
+    {{/each}}
+  {{/if}}
+    {{#if comments}}
+    <p class="subcategorias">Comentarios para este ejercicio: </p>
+    {{#each comments}}
+  <p class="nomSubCateg">{{comment}}</p>
+    {{/each}}
+  {{/if}}
+  {{#if muscles}}
+  <div class="musculoDiv">
+   <p  class="subcategorias">Músculos:</p>
+    {{#each muscles}}
+    <div class="musculoImgs">
+      <img  class="muscleImg" src="https:wger.de{{image_url_main}}" />
+     {{#if is_front}}
+     <img class="frontImg" src="https://wger.de/static/images/muscles/muscular_system_front.svg">
+     {{else}}
+     <img src="https://wger.de/static/images/muscles/muscular_system_back.svg">
+      </div>
+     {{/if}}
+    {{/each}}
+    </div>
+  {{/if}}
+  
+</div>
+{{/each}}
+</div>
+
+<div class="general">
+<a name="Abdominales"></a>
+{{#each exercise3}}
+<div class="card vistabusqueda" style="width: 93vw;">
+  <h2 class="tituloEjercicio"> {{name}}</h2>
+  {{#if equipment}}
+  <p class="subcategorias">Equipamiento: <br /></p>
+    {{#each equipment}}
+<p class="nomSubCateg"> {{name}}</p>
+    {{/each}}
+  {{/if}}
+  <p class="subcategorias">Descripción: </p><p class="nomSubCateg">{{{description}}}</p>
+  {{#if images}}
+  <p class="subcategorias">Imágenes: </p>
+    {{#each images}}
+<img class="imagenEjercicio" src="{{image}}" />
+    {{/each}}
+  {{/if}}
+    {{#if comments}}
+    <p class="subcategorias">Comentarios para este ejercicio: </p>
+    {{#each comments}}
+  <p class="nomSubCateg">{{comment}}</p>
+    {{/each}}
+  {{/if}}
+  {{#if muscles}}
+  <div class="musculoDiv">
+   <p  class="subcategorias">Músculos:</p>
+    {{#each muscles}}
+    <div class="musculoImgs">
+      <img  class="muscleImg" src="https:wger.de{{image_url_main}}" />
+     {{#if is_front}}
+     <img class="frontImg" src="https://wger.de/static/images/muscles/muscular_system_front.svg">
+     {{else}}
+     <img src="https://wger.de/static/images/muscles/muscular_system_back.svg">
+      </div>
+     {{/if}}
+    {{/each}}
+    </div>
+  {{/if}}
+  
+</div>
+{{/each}}
+</div>
+

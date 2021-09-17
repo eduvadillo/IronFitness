@@ -18,6 +18,7 @@ a {
   overflow: hidden;
   border-radius: 15px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  justify-content: center
 }
 
 .radio__input {
@@ -183,4 +184,222 @@ display: flex;
         align-items: center;
         margin-left: 42%;
         margin-top: 2rem;
+}
+
+
+
+.tituloPiernas{
+        display: flex
+}
+
+
+
+/* INDEX BUENO */
+
+.dividirPortada{
+        display: flex;
+        justify-content: center;
+        height: 50vh;
+        align-items: center;
+}
+
+.opciones{
+        margin-right: 5rem;
+}
+
+.tituloPortada{
+display: flex;
+justify-content: center;
+align-items: flex-end;
+height: 30vh;
+}
+
+/* INDEX RUTINAS */
+
+.tituloIndexRutina{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 30vh;
+}
+
+.allFormRutina{
+display: flex;
+justify-content: center;
+height: 50vh;
+align-items: center;
+}
+
+.boxForm{
+height: 50vh;
+display: flex;
+flex-direction: column;
+justify-content: space-evenly;
+align-items: center;
+}
+
+.opciones2{
+margin-right: 2rem;
+width: 33vw;
+text-align: center;
+}
+
+.tituloPortadaEjercicio{
+display: flex;
+justify-content: center;
+height: 14vh;
+align-items: flex-end;
+}
+
+.dividirPortada2{
+display: flex;
+justify-content: center;
+height: 30vh;
+align-items: center;
+}
+
+.chooseEjer{
+text-align: center;
+}
+
+.btnmargin{
+margin-top: 1rem;
+}
+
+/* VISTA BUSQUEDA AVANZADA */
+
+.busquedaAvanzada{
+text-align: center;
+margin-bottom: 3rem;
+margin-top: 1rem;
+}
+
+
+
+.vistabusqueda{
+margin-top: 2rem;
+margin-bottom: 3rem;
+}
+
+.tituloBusqueda{
+text-align: center;
+margin-top: 3rem;
+}
+
+
+/* EQUIPMENT VISTA */
+
+.equipmentAll{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+}
+
+.muscleCard{
+        margin: 3rem;
+        justify-content: center;
+}
+
+.equiptext{
+        text-align: center;
+}
+
+.imgcard{
+        width: 10rem;
+        height: 6rem;
+}
+
+.imgcard1{
+        margin-top: 1rem;
+        width: 10rem;
+        height: 6rem;
+}
+
+.cardImg{
+        width: 10rem;
+        height: auto;
+}
+
+.imgcenter{
+        align-items: center;
+}
+
+/* VISTA EJERCICIO EQUIPMENT */
+
+.imgEjercicio{
+        display: flex;
+         justify-content: center;
+         margin-bottom: 1rem;
+
+}
+
+/* CAMBIOS LAYOUT */
+
+.linknav{
+        margin-left: 40rem;
+        margin-right: 2rem;
+}
+
+.linknav2{
+        margin-right: 2rem;
+}
+
+.audioRocky{
+        opacity: 0;
+}
+
+.audioRocky:hover{
+        opacity: 1;
+}
+
+.navbar-nav{
+        align-items: center;
+}
+
+.ironFitness{
+width: 50px;
+}
+
+.ironbackground{
+        position: absolute;
+        opacity: 0.3;
+        width: 40rem;
+        margin-top: 23rem;
+        margin-left: -2rem;
+        z-index: -1;
+}
+
+/* VISTA RUTINA PRINCIPIANTE 1 DIA */
+
+.rutinaAdapta{
+        text-align: center;
+        margin-top: 2rem;
+}
+
+.rutinaConsejo{
+        text-align: center;
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+}
+
+.allExerciseRutina{
+        text-align: center;
+}
+
+.categoryRutina{
+        font-weight: 600;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+}
+
+.allExerciseRutina{
+        display: flex;
+}
+
+.bodyRutina{
+        width: 30%;
+}
+
+.bodyImage{
+        margin: 4rem
 }

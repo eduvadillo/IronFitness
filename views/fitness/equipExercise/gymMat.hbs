@@ -1,9 +1,8 @@
-{{#with exercise}}
-<div class="pantallaPartida">
+{{#each exercise}}
+<div class="card vistabusqueda" style="width: 93vw;">
   <h2 class="tituloEjercicio"> {{name}}</h2>
-  <p class="subcategorias">Categoría:<br /> </p><p class="nomSubCateg">{{category.name}}</p>
   {{#if equipment}}
- <p class="subcategorias">Equipamiento: <br /></p>
+  <p class="subcategorias">Equipamiento: <br /></p>
     {{#each equipment}}
 <p class="nomSubCateg"> {{name}}</p>
     {{/each}}
@@ -11,11 +10,11 @@
   <p class="subcategorias">Descripción: </p><br /><p class="nomSubCateg">{{{description}}}</p>
   {{#if images}}
   <p class="subcategorias">Imágenes: </p>
-  <div class="subImagen">
     {{#each images}}
+    <div class="imgEjercicio">
 <img class="imagenEjercicio" src="{{image}}" />
+</div>
     {{/each}}
-    </div>
   {{/if}}
     {{#if comments}}
     <p class="subcategorias">Comentarios para este ejercicio: </p>
@@ -38,12 +37,17 @@
     {{/each}}
     </div>
   {{/if}}
-  
-  {{#if equipment}}
-    {{#each equipment}}
-      <p class="subcategorias">Equipamiento: <br /> <p class="nomSubCateg">{{name}}</p>
-    {{/each}}
-  {{/if}}
+          <form action = "/equipment/{{id}}" method="POST">
+          
+        <input type="text" name="name" hidden value="{{name}}" />
+        <input type="text" name="category" hidden value="{{this.category}}"/>
+        <input type="text" name="description" hidden  value="{{description}}"/> 
+        <input type="text" name="muscles" hidden value="{{[muscles]}}" />
+        <input type="text" name="equipment" hidden value="{{equipment}}" />
+        <input type="text" name="comments" hidden value="{{this.comments}}" />
+        <input type="text" name="ejercicioId" hidden value="{{id}}" />
 
-
-{{/with}}
+          <button type="submit">Añadir a favoritos</button>
+        </form>
+</div>
+{{/each}}

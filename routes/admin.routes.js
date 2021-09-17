@@ -25,9 +25,19 @@ router.get("/crear-ejercicio", (req, res) => {
 
 
 router.post("/crear-ejercicio", (req, res) => {
-          const { name, description, category, muscles, equipment } = req.body;
-            Exercise.create({name, description, category, muscles, equipment})
-            .then(() => { res.render(`/index`) 
+          const { name, description, category, muscles, equipment, comments } = req.body;
+
+        const query = {
+        name: name,
+        description: description,
+        category: { name: category },
+        muscles: [{name: muscles}],
+        equipment: [{name: equipment}],
+        comments: [{name: comments}],
+        }
+
+            Exercise.create(query)
+            .then(() => { res.render(`index`) 
         })
             .catch((err) => {
           res.status(400).send(err)

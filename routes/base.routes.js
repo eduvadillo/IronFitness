@@ -11,6 +11,13 @@ router.get("/", isLoggedIn, (req, res, next) => {
   })
 });
 
+router.get("/a", isLoggedIn, (req, res, next) => {
+  User.findById(req.user._id)
+  .then((user) => {
+        res.render("index2", { user: user, isLoggedIn: req.user });  
+  })
+});
+
 //  ejercicios favoritos
 
 router.get("/myfavorites", isLoggedIn, (req, res, next) => {

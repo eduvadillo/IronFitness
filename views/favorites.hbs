@@ -1,9 +1,36 @@
 <h1>bienvenido {{user.username}}</h1>
 {{#each user.favorites}}
 
-  <p>Este es el id {{_id}}</p>
-  <p>Num base: {{exercise_base}}</p>
-  <p> Nombre: {{name}}</p>
-  <p style=" white-space: pre-wrap"> Descripción: {{{description}}}</p>
+<div class="card vistabusqueda" style="width: 93vw;">
+  <h2 class="tituloEjercicio"> {{name}}</h2>
+  {{#if equipment}}
+  <p class="subcategorias">Equipamiento: <br /></p>
+    {{#each equipment}}
+<p class="nomSubCateg"> {{name}}</p>
+    {{/each}}
+  {{/if}}
+  <p class="subcategorias">Descripción: </p><br /><p class="nomSubCateg">{{{description}}}</p>
+    {{#if comments}}
+    <p class="subcategorias">Comentarios para este ejercicio: </p>
+    {{#each comments}}
+  <p class="nomSubCateg">{{comment}}</p>
+    {{/each}}
+  {{/if}}
+  {{#if muscles}}
+  <div class="musculoDiv">
+   <p  class="subcategorias">Músculos:</p>
+    {{#each muscles}}
+    <div class="musculoImgs">
+      <img  class="muscleImg" src="https:wger.de{{image_url_main}}" />
+     {{#if is_front}}
+     <img class="frontImg" src="https://wger.de/static/images/muscles/muscular_system_front.svg">
+     {{else}}
+     <img src="https://wger.de/static/images/muscles/muscular_system_back.svg">
+      </div>
+     {{/if}}
+    {{/each}}
+    </div>
+  {{/if}}
 
+</div>
 {{/each}}

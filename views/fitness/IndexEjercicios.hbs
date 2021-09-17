@@ -1,25 +1,34 @@
-<form action="/crear-ejercicio" method="POST">
+<div class="tituloPortadaEjercicio">
+        <h2>Elige ejercicios según tus gustos y necesidades</h2>
+</div>
+<div class="dividirPortada2">
+        <div class="opciones2">
+                <h5>Ordenados por categoría</h5>
+                <div class="col text-center">
+                <a class="btn btn-danger regular-button btnmargin" href="/elegir-rutina"> Ver ejercicios</a>
+                </div>	
+        </div>
+        <div class="opciones2">
+                <h5>Ordenados por músculo</h5>
+                <div class="col text-center">
+                <a class="btn btn-danger regular-button btnmargin" href="/draw">  Ver ejercicios</a>
+                </div>	
+        </div>
+         <div class="opciones2">
+                <h5>Ordenados por material necesario</h5>
+                <div class="col text-center">
+                <a class="btn btn-danger regular-button btnmargin" href="/equipment">  Ver ejercicios</a>
+                </div>	
+        </div>
+</div>
+<div class="busquedaAvanzada">
+        <h2>Búsqueda avanzada para ver toda la información de los ejercicios</h2>
+</div>
+<form action="/busqueda-avanzada" method="POST">
 <div class="general">
 
-<div class="textCreate">
 <div class="allSelects">
-        <h3>Excercise name</h3>
-        <textarea rows="3" cols="30" name="name" value="name"></textarea>
-</div>
-
-<div class="allSelects">
-        <h3> Excercise description</h3>
-        <textarea rows="3" cols="30" name="description" value="description"></textarea>
-</div>
-
-<div class="allSelects">
-        <h3> Excercise comment</h3>
-        <textarea rows="3" cols="30" name="comments" value=" comments"></textarea>
-</div>
-</div>
-
-<div class="allSelects">
-<h3>Category</h3>
+<h5 class="chooseEjer">Category</h5>
 <div class="select">
    <select name="category" id="format">
       <option selected disabled>Choose exercise category</option>
@@ -35,7 +44,7 @@
 </div>
 
 <div class="allSelects">
-<h3>Muscle</h3>
+<h5 class="chooseEjer">Muscle</h5>
 <div class="select">
    <select name="muscles" id="format2">
       <option selected disabled>Choose a muscle to train</option>
@@ -59,9 +68,9 @@
 </div>
 
 <div class="allSelects">
-<h3>Equipment</h3>
+<h5 class="chooseEjer">Equipment</h5>
 <div class="select">
-   <select name="equipment" id="format2">
+   <select name="equipment" id="format3">
       <option selected disabled>Choose a necessary equipment</option>
       <option value="Barbell">Barbell</option>
       <option value="Bench">Bench</option>
@@ -76,8 +85,8 @@
 </div>
 </div>
 
-
-
 </div>
-<button class="btn btn-primary botonCrear" type="submit"> Create Exercise</button>
+<div class="col text-center">
+        <button class="btn btn-danger regular-button btnmargin" type="submit">  Ver ejercicios</button>
+</div>
 </form>

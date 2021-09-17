@@ -1,24 +1,13 @@
-<form class="formSignUp" action="/auth/signup" method="POST">
-  <label>
-    Username
-    <input type="text" name="username" placeholder="Nombre de usuario" />
-  </label>
-  </label>
-  <label>
-    Password
-    <input type="password" name="password" placeholder="******" />
-  </label>
-  <label>
-    Email
-    <input type="email" name="email" placeholder="rockstar@ironhack.com" />
-  </label>
-<label>
-    CodeInvitation
-    <input type="text" name="codeInvitation" placeholder="Código de invitación"/>
-</label>
-<label>
-    Nivel
-    <input type="text" name="nivel" placeholder="administrador"/>
-</label>
-  <button type="submit">Submit</button>
-</form>
+
+
+<div class="col text-center formlogin">
+    <form class="formRegistro" action="/auth/signup" method="POST">
+        <h1 class="h1Registro">Formulario de Registro </h1>
+        <input  class="inputRegistro" type="text" name="username" placeholder="Nombre de usuario">
+        <input  class="inputRegistro" type="email" name="email" placeholder="rockstar@ironfitness.com">
+        <input  class="inputRegistro" type="password" name="password" placeholder="Ingrese su contraseña">
+        <input class="inputRegistro" type="text" name="codeInvitation" placeholder="Código de invitación"/>
+        <button class="buttonRegistro" type="submit">Registrarse</button>
+        <p class="linkRegistro"><a href="/auth/login">¿Ya tienes cuenta?</a></p>
+    </form>
+</div>

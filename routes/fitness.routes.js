@@ -8,7 +8,7 @@ const User = require("../models/User.model");
 const Api = require("../services/ApiHandler");
 const FitnessAPI = new Api();
 
-router.get("/elegir-categoria", (req, res) => {
+router.get("/elegirCategoria", (req, res) => {
 
         res.render(`fitness/indexEjercicios`,  { isLoggedIn: req.session.user })
 })

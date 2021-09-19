@@ -356,18 +356,26 @@ margin-top: 3rem;
         align-items: center;
 }
 
+.ironFitnessback{
+        position: absolute;
+        opacity: 0.4;
+        width: 40rem;
+        height: auto;
+        margin-left: 20rem;
+        margin-top: -17rem;
+        z-index: -1;    
+        
+}
+
+.ironbackground{
+        width: 100%
+}
+
 .ironFitness{
 width: 50px;
 }
 
-.ironbackground{
-        position: absolute;
-        opacity: 0.3;
-        width: 40rem;
-        margin-top: 23rem;
-        margin-left: -2rem;
-        z-index: -1;
-}
+
 
 /* VISTA RUTINA PRINCIPIANTE 1 DIA */
 
@@ -542,4 +550,18 @@ width: 50px;
 .favoritesViews{
         text-align: center;
         font-size: 3rem
+}
+
+@media (max-width: 500px)  {
+
+        .ironFitnessback{
+        position: absolute;
+        opacity: 0.4;
+        width: 20rem;
+        margin-left: -1rem;
+        height: auto;
+        margin-top: -5rem;
+        z-index: -1;    
+        
+}
 }

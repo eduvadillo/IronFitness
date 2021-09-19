@@ -43,11 +43,10 @@
               <a class="nav-link active linknav" aria-current="page" href="/">Home</a>
             </li>
            {{#if isLoggedIn}}
-           
              <li class="nav-item">
               <a class="nav-link linknav2" href="/myfavorites">MyFavorites</a>
             </li>
-            <li class="nav-item">
+             <li class="nav-item">
               <a class="nav-link linknav2" href="/auth/logout">Logout</a>
             </li>
                 {{else}}
@@ -58,6 +57,11 @@
               <a class="nav-link linknav2" href="/auth/login">Login</a>
               </li>
                  {{/if}}
+                {{#if isAdmin}}
+                <li class="nav-item">
+              <a class="nav-link linknav2" href="/crear-ejercicio">Crear ejercicio</a>
+            </li>
+            {{/if}}
           </ul>
           </div>
       </div>

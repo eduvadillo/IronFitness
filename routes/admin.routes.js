@@ -1,5 +1,6 @@
 const router = require("express").Router();
 
+const isAdmin = require("../middleware/isAdmin");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const Ejercicio = require("../models/Ejercicios.model");
 const Exercise = require("../models/AllExercises.model");
@@ -9,17 +10,19 @@ const FitnessAPI = new Api();
 
 
 
-router.get("/crear-ejercicio", (req, res) => {
+router.get("/crear-ejercicio", isAdmin , (req, res) => {
+
+console.log(`*2*"*"*"*" ` , isLoggedIn)
   
-   User.findOne( { nivel: { $eq: "administrador" }} ) 
+   User.findOne( req.session.user ) 
 
   .then((found) => {
     // If the user is found, send the message username is taken
-    if (found) {
+    if (found.nivel === "administrador") {
         console.log(`*******************`, found)
         res.render("administrador/crearEjercicio", {isLoggedIn: req.session.user})
  }
- else {res.render("/")}
+ else {res.redirect("/")}
    
   })})
 

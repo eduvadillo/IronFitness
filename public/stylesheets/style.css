@@ -538,3 +538,8 @@ width: 50px;
     margin-top: 15px;
     font-weight: bolder;
 }
+
+.favoritesViews{
+        text-align: center;
+        font-size: 3rem
+}

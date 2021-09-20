@@ -81,49 +81,76 @@ router.post("/equipment", isLoggedIn, (req, res) => {
 }     else if (Bench) {
   Exercise.find({ $and:[{ "equipment.name" : "Bench"}, {"language.id" : 2 }]})
   .then((exercise) => { 
+           exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
           res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }    else if (id3) {
   Exercise.find({ $and:[{ "equipment.id" : 3}, {"language.id" : 2 }]})
   .then((exercise) => { 
+           exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
           res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }
  else if (id4) {
   Exercise.find({ $and:[{ "equipment.id" : 4}, {"language.id" : 2 }]})
   .then((exercise) => { 
+           exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
           res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }
  else if (id9) {
   Exercise.find({ $and:[{ "equipment.id" : 9}, {"language.id" : 2 }]})
   .then((exercise) => { 
+           exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
           res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }
  else if (Kettlebell) {
   Exercise.find({ $and:[{ "equipment.name" : "Kettlebell"}, {"language.id" : 2 }]})
   .then((exercise) => { 
+           exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
           res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }  else if (id7) {
   Exercise.find({ $and:[{ "equipment.id" : 7}, {"language.id" : 2 }]})
   .then((exercise) => { 
+           exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
           res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }  else if (id6) {
   Exercise.find({ $and:[{ "equipment.id" : 6}, {"language.id" : 2 }]})
   .then((exercise) => { 
+           exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
           res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }  else if (id5) {
   Exercise.find({ $and:[{ "equipment.id" : 5}, {"language.id" : 2 }]})
   .then((exercise) => { 
+           exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
           res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }   else if (id2) {
   Exercise.find({ $and:[{ "equipment.id" : 2}, {"language.id" : 2 }]})
   .then((exercise) => { 
+           exercise.forEach((exercise) => {
+                exercise.description = cleanString(exercise.description)
+          })
           res.render(`fitness/equipExercise/gymMat`, {exercise, isLoggedIn: req.session.user} )
   })
 }
